@@ -1,0 +1,92 @@
+.crawler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &__status {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgba(50,255,0,0.5);
+        color: black;
+        padding: 5px 20px;
+        font-size: 40px;
+        text-align: center;
+
+        i {
+            margin-right: 20px;
+        }
+    }
+
+    &__start {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        display: block;
+        background-color: rgba(50,255,0,0.5);
+        color: black;
+        padding: 5px 20px;
+        font-size: 40px;
+        text-align: center;
+        border: 0;
+    }
+
+    &__infos {
+        position: absolute;
+        top: 90px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        background-color: #131313;
+        overflow: hidden;
+    }
+
+    &__info {
+        display: block;
+        position: relative;
+        padding: 10px 20px;
+        color: green;
+        overflow: hidden;
+        width: 100%;
+        height: 56px;
+        transform-origin: 0% 50%;
+
+        &:nth-child(1){
+            padding: 0 0;
+            height: 0;
+            animation-name: message-appear;
+            animation-duration: 0.2s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+
+    }
+}
+
+@keyframes message-appear {
+    0% {
+        padding: 0 0;
+        background-color: rgba(green, 0.1);
+        transform: scaleX(1) scaleY(0.2);
+        height: 0;
+        
+        color: rgba(black, 0.2);
+    }
+
+    30% {
+        background-color: rgba(green, 0.4);
+        color: rgba(yellow, 1);
+    }
+    
+    100% {
+        padding: 10px 20px;
+        background-color: rgba(green, 0);
+        transform: scaleX(1) scaleY(1);
+        height: 56px;
+        color: green;
+    }
+}

@@ -1,0 +1,97 @@
+@keyframes pulse {
+    0% {
+        background-color: #131313;
+       
+        color: rgba(white, 0.8);
+    }
+
+    50% {
+        background-color: rgba(180,24,5,1);
+       
+        color: rgba(255,230,90, 0.8);
+    }
+
+    100% {
+        background-color: #131313;
+       
+        color: rgba(white, 0.8);
+    }
+}
+
+.qr-code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    text-align: center;
+    line-height: 100vh; 
+
+    &__content {
+        position: relative;
+        display: inline-block;
+        width: 310px;
+        
+        padding: 1rem 1rem 1.5rem;
+        vertical-align: middle;
+        line-height: normal;
+
+        background-color: #131313;
+
+        color: rgba(white, 0.8);
+
+        animation-name: pulse;
+        animation-duration: 4s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 5s;
+        animation-iteration-count: infinite;
+
+        box-shadow: 
+            0 0 80px rgba(0,0,0,8),
+            0 0 50px rgba(0,0,0,0.7),
+            0 0 30px rgba(0,0,0,0.5)
+        ;
+
+        &:before {
+            position: absolute;
+            content: '';
+            border: 30px solid rgba(red, 0.3);
+            transform: rotate(8deg);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            box-shadow: 0 0 5px rgba(red, 0.2);
+        }
+    }
+
+    
+
+    
+
+    h1 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 400;
+        text-shadow: 
+            1px 1px 5px rgba(0,0,0,0.7),    
+            2px 2px 3px rgba(0,0,0,0.7),
+            3px 3px 1px rgba(90,20,0, 0.4)
+    }
+
+    img {
+        position: relative;
+        top: 0.5rem;
+        display: block;
+        width: 100%;
+        height: auto;
+
+        box-shadow: 
+            // 0 0 80px rgba(0,0,0,1),
+            0 0 50px rgba(0,0,0,0.8),
+            0 0 30px rgba(0,0,0,0.9)
+        ;
+    }
+}

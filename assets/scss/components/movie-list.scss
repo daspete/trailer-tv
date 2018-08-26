@@ -1,0 +1,32 @@
+.movie-list {
+    position: absolute;
+    top: 0;
+    left: $movie-slider-width;
+    right: $app-control-width;
+    bottom: 0;
+    z-index: 3;
+
+    box-shadow: 
+        0 0 80px rgba(0,0,0,1),
+        0 0 50px rgba(0,0,0,0.8),
+        0 0 30px rgba(0,0,0,0.9)
+    ;
+    background-color: rgba(255,255,255,0.01);
+
+    // .movie-card {
+    //     &:nth-child(1){
+    //         animation-name: move-down;
+    //         animation-duration: 0.5s;
+    //         animation-timing-function: ease-out;
+    //         animation-fill-mode: forwards;
+    //     }
+
+    //     // &:nth-child(2) {
+    //     //     animation-name: move-down-alt;
+    //     //     animation-duration: 0.5s;
+    //     //     animation-timing-function: ease-out;
+    //     //     animation-fill-mode: forwards;
+    //     // }
+        
+    // }
+}

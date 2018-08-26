@@ -1,0 +1,9 @@
+/node_modules
+/dist
+/build
+/.nuxt
+/yarn.lock
+/yarn-error.log
+/.env
+/api/db.json
+/json-server.json

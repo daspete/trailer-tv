@@ -1,0 +1,205 @@
+.app-controller {
+
+    &__movie-list-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50vh;
+        overflow: hidden;
+    }
+
+    &__actions {
+        position: absolute;
+        top: 50vh;
+        
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #444;
+
+        .row {
+            position: relative;
+            height: 100%;
+        }
+
+        .col-4 {
+            position:relative;
+            height: 100%;
+        }
+    }
+
+    &__video-controller {
+        position: absolute;
+        top: calc(50vh - 50px);
+        height: 50px;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 100;
+
+        &__control {
+            width: 100%;
+            height: 50px;
+            background-color: #232323;
+            position: relative;
+            color: white;
+            text-align: right;
+
+            box-shadow:
+                0 0 30px rgba(0,0,0,0.9);
+            ;
+
+            span {
+                pointer-events: none;
+                display: block;
+                padding: 7px 20px;
+            }
+        }
+
+        &__control-position {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            height: 50px;
+            background-color: rgba(255,0,0,0.5);
+            box-shadow:
+                0 0 30px rgba(150,0,0,0.9);
+            ;
+        }
+    }
+
+    &__move-button,
+    &__trailer-button,
+    &__search-button {
+        display: block;
+        
+        width: 100%;
+        height: 50%;
+        border: 0;
+        background-color: rgba(0,0,0,0.5);
+        cursor: pointer;
+
+        text-shadow: 
+            1px 1px 5px rgba(0,0,0,0.7),    
+            2px 2px 3px rgba(0,0,0,0.7),
+            3px 3px 1px rgba(90,20,0, 0.4);
+
+        i {
+            font-size: 100%;
+            color: rgba(white, 0.7);
+
+        }
+
+        transition: 
+            outline 0.5s,
+            box-shadow 0.8s,
+            background-color 0.5s
+        ;
+
+        &:hover {
+            // background-color: darken(rgba(255,0,0,0.9), 10%);
+            // box-shadow: 0 0 20px rgba(255,0,0,0.9);
+        }
+
+        &:active {
+            outline: 3px solid rgba(255,40,0,0.3);
+            box-shadow: 0 0 20px rgba(255,0,0,0.9);
+            background-color: darken(rgba(255,0,0,0.9), 10%);
+        }
+
+        &:focus {
+            outline: 150px solid rgba(0,0,0,0);
+            box-shadow: 0 0 30px rgba(0,0,0,0);
+            //background-color: rgba(0,0,0,0.5);
+        }
+
+        &:nth-child(1){
+            top: 0;
+        }
+        &:nth-child(2){
+            bottom: 0;
+        }
+    }
+
+    &__trailer-button {
+        right: 30%;
+    }
+
+    &__search-button {
+        right: 30%;
+        top: initial;
+        bottom: 0;
+    }
+
+    &__search {
+        position: fixed;
+        height: $search-height;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: 0 0 150px rgba(255,255,255,0.1);
+
+        input {
+            position: absolute;
+            top: 0;
+            display: inline-block;
+            width: 70%;
+            height: $search-height;
+            padding: 0;
+            margin: 0;
+            left: 0;
+        }
+
+        button {
+            right: 0;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            width: 30%;
+            height: $search-height;
+            background-color: rgba(0,0,0,1);
+            cursor: pointer;
+            font-size: 100%;
+            color: rgba(white, 0.7);
+            border: 0;
+
+            text-shadow: 
+                1px 1px 5px rgba(0,0,0,0.7),    
+                2px 2px 3px rgba(0,0,0,0.7),
+                3px 3px 1px rgba(90,20,0, 0.4);
+
+            i {
+                color: rgba(white, 0.7);
+
+            }
+
+            transition: 
+                outline 0.5s,
+                box-shadow 0.8s,
+                background-color 0.5s
+            ;
+
+            &:hover {
+                // background-color: darken(rgba(255,0,0,0.9), 10%);
+                // box-shadow: 0 0 20px rgba(255,0,0,0.9);
+            }
+
+            &:active {
+                outline: 3px solid rgba(255,40,0,0.3);
+                box-shadow: 0 0 20px rgba(255,0,0,0.9);
+                background-color: darken(rgba(255,0,0,0.9), 10%);
+            }
+
+            &:focus {
+                outline: 150px solid rgba(0,0,0,0);
+                box-shadow: 0 0 30px rgba(0,0,0,0);
+                //background-color: rgba(0,0,0,0.5);
+            }
+        }
+    }
+
+}

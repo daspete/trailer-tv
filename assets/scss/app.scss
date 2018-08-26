@@ -1,0 +1,33 @@
+@import "microreset";
+
+@import "variables";
+@import "bootstrap";
+
+@import "fonts";
+
+@import "components/movie-card";
+@import "components/movie-slider";
+@import "components/movie-list";
+@import "components/app-controller";
+
+@import "elements/qr-code";
+@import "elements/trailer";
+@import "elements/crawler";
+
+body {
+    overflow: hidden;
+    background: linear-gradient(to bottom, #131313, #060606);
+    font-size: 24px;
+}
+
+html {
+    font-size: 8px;
+
+    @include media-breakpoint-up('md'){
+        font-size: 18px;
+    }
+
+    @include media-breakpoint-up('lg'){
+        font-size: 24px;
+    }
+}

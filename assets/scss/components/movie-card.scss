@@ -1,0 +1,162 @@
+
+@keyframes move-from-left {
+    0% {  
+    //    left: -100px 
+    }
+    100% { 
+        // left: 0 
+    }
+}
+
+@keyframes fade-in {
+    0% {  opacity: 0 }
+    100% { opacity: 1 }
+}
+
+
+.movie-card {
+    position: relative;
+    height: 100%;
+
+    transform-origin: 0% 0%;
+    transform: scale(0.5);
+    opacity: 0.22;
+
+    &:nth-child(1){
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    &:nth-child(2){
+        transform: scale(0.75);
+        opacity: 0.44;
+    }
+
+    &:nth-child(3){
+        top: -100px;
+    }
+    
+
+    color: #676767;
+    padding: 1rem 2rem;
+    text-shadow: 
+        0 0 3px rgba(0,0,0,0.7),
+        0 0 8px rgba(0,0,0,0.7),
+        0 0 11px rgba(0,0,0,0.7),
+    ;
+
+    &__poster,
+    &__headline,
+    &__description,
+    &__info-line {
+        position: relative;
+        opacity: 0;
+        //left: -100px;
+
+        animation-name: 
+            move-from-left, 
+            fade-in
+        ;
+
+        animation-timing-function: 
+            ease-out,
+            ease-out
+        ;
+        animation-fill-mode: 
+            forwards,
+            forwards
+        ;
+
+        animation-duration: 
+            0.5s, 
+            0.25s
+        ;
+
+        
+        
+
+    }
+    
+    &__poster {
+        animation-delay: 
+            0.2s,
+            0.45s
+        ;
+    }
+
+    &__headline{
+        animation-delay: 
+            0s,
+            0.25s
+        ;
+    }
+    &__description{
+        animation-delay: 
+            0.3s,
+            0.55s
+        ;
+    }
+    &__info-line{
+        animation-delay: 
+            0.25s,
+            0.5s
+        ;
+    }
+
+
+    &__poster {
+        margin-top: 0.5rem;
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 150%;
+        background-size: cover;
+        background-position: center center;
+        box-shadow: 
+            0 0 80px rgba(0,0,0,1),
+            0 0 50px rgba(0,0,0,0.8),
+            0 0 30px rgba(0,0,0,0.9)
+        ;
+    }
+
+    &__actions {
+
+    }
+
+    &__headline {
+        font-size: 2rem;
+        color: rgba(255,255,255,0.6);
+        margin-bottom: 1rem;
+
+        text-shadow: 
+            1px 1px 5px rgba(0,0,0,0.7),    
+            2px 2px 3px rgba(0,0,0,0.7),
+            3px 3px 1px rgba(207, 207, 207, 0.4)
+            
+                
+        ;
+    }
+
+    &__info-line {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+        h2 {
+            display: inline-block;
+            font-size: 0.8rem;
+        }
+
+        div {
+            display: inline-block;
+            margin-right: 0.5rem;
+            padding: 0 0.5rem 0 0;
+
+            color: rgba(255,255,255,0.5);
+        }
+    }
+
+    &__description {
+        margin-left: 2rem;
+        font-size: 1rem;
+        line-height: 1.212121rem;
+    }
+}

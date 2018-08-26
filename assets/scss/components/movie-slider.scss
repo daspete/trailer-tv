@@ -1,0 +1,32 @@
+
+
+.movie-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $movie-slider-width;
+
+    // display: flex;
+    // flex-flow: row wrap;
+    // justify-content: space-around;
+    overflow: hidden;
+
+    &__slide {
+        width: 100%;
+        padding-top: 150%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+
+        &:nth-child(1){
+            opacity: 1;
+        }
+
+        @for $i from 2 through 9 {
+            &:nth-child(#{$i}){
+                opacity: #{(10 - $i) / 10};
+            }
+        }
+    }
+}
