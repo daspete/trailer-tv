@@ -2,7 +2,7 @@
     <div class="movie-card">
         <h1 class="movie-card__headline" v-html="movie.title"></h1>
         <div class="row">
-            <div class="col-3">
+            <div class="col-sm-8 col-md-3 col-lg-3">
                 <div class="movie-card__poster"
                     :style="`background-image: url(${ movie.poster })`"
                 ></div>
@@ -37,7 +37,7 @@ export default {
             default: {
                 title: 'Film',
                 poster: 'https://placeimg.com/320/480/tech/grayscale',
-                genres: ['Genre 1', ['Genre 2']],
+                genres: ['Genre 1', 'Genre 2'],
                 year: 2018,
                 description: 'This movie is indescribable...',
                 trailer: '5-qSWrFGffc'

@@ -1,6 +1,8 @@
 <template>
     <div class="app-controller">
-        <div class="app-controller__movie-list-container"></div>
+        <div class="app-controller__movie-list-container">
+            <movie-card v-if="movie" :movie="movie"></movie-card>
+        </div>
         
         <div class="app-controller__video-controller" v-if="trailerActive">
             <div class="app-controller__video-controller__control" v-on:click="OnTrailerControlClick">
@@ -12,7 +14,8 @@
         <div class="app-controller__actions" v-if="!searchActive">
             <div class="row">
                 <div class="col-4">
-                    
+                    <button v-on:click="VoteUp" class="app-controller__vote-button"><i class="fa fa-thumbs-up"></i></button>
+                    <button v-on:click="VoteDown" class="app-controller__vote-button"><i class="fa fa-thumbs-up" style="transform: rotate(180deg)"></i></button>
                 </div>
                 <div class="col-4">
                     <button 
@@ -58,6 +61,7 @@ export default {
 
     data(){
         return {
+            movie: null,
             movies: [],
             currentMovieId: 0,
             moviesInView: 10,
@@ -106,6 +110,11 @@ export default {
             controllerId: this.socketId
         });
 
+        socket.on('movie.update', (data) => {
+            console.log(data);
+            this.movie = data
+        });
+
         socket.on('trailer.update', (data) => {
             this.trailer.length = Math.round(data.length);
             this.trailer.position = Math.round(data.position);
@@ -136,6 +145,20 @@ export default {
                 displayId: this.displayId,
                 controllerId: this.socketId
             });
+        },
+
+        VoteUp(){
+            // socket.emit('controller.vote.up', {
+            //     displayId: this.displayId,
+            //     controllerId: this.socketId
+            // });
+        },
+
+        VoteDown(){
+            // socket.emit('controller.vote.down', {
+            //     displayId: this.displayId,
+            //     controllerId: this.socketId
+            // });
         },
 
         StartTrailer(){
@@ -205,3 +228,4 @@ export default {
 
 }
 </script>
+

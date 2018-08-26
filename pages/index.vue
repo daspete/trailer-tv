@@ -54,8 +54,23 @@ export default {
             apiUrl: env.API_URL,
             appUrl: env.APP_URL,
 
+
             search: ''
 
+        }
+    },
+
+    head(){
+
+        return {
+            title: 'TrailerTV',
+            meta: [
+                { name: 'description', content: 'Watch movie trailers on your TV and control the playback with your smartphone' },
+                { name: 'keywords', content: 'film,trailer,tv,watch,smartphone,nuxt.js,nuxt,vue,vuejs,javascript,socket,websocket' },
+                { name: 'og:title', content: 'TrailerTV' },
+                { name: 'og:description', content: 'Watch movie trailers on your TV and control the playback with your smartphone' },
+                { name: 'og:image', content: `${ this.appUrl }/trailertv.jpg` },
+            ]
         }
     },
     
@@ -70,8 +85,16 @@ export default {
     },
 
     watch: {
-        search(value){
+        currentMovieId(value){
+            console.log(this.CurrentMovies[0]);
 
+            this.$nextTick(() => {
+                socket.emit('movie.update', {
+                    controllerId: this.controllerId,
+                    movie: this.CurrentMovies[0]
+                });
+            })
+            
         }
     },
 

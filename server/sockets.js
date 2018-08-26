@@ -124,6 +124,14 @@ class Sockets {
                 });
             });
 
+            socket.on('movie.update', (data) => {
+                let controller = this.GetConnection(data.controllerId);
+
+                if(controller == undefined) return;
+
+                controller.socket.emit('movie.update', data.movie);
+            });
+
             socket.on('crawler.start', (data) => {
                 let client = this.GetConnection(data.socketId);
 

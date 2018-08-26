@@ -7,6 +7,16 @@
         right: 0;
         height: 50vh;
         overflow: hidden;
+
+        &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, #000 2%, rgba(0, 0, 0, 0) 31%)
+        }
     }
 
     &__actions {
@@ -73,6 +83,7 @@
     }
 
     &__move-button,
+    &__vote-button,
     &__trailer-button,
     &__search-button {
         display: block;
