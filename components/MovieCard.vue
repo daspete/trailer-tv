@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-8 col-md-3 col-lg-3">
                 <div class="movie-card__poster"
-                    :style="`background-image: url(${ movie.poster })`"
+                    :style="`background-image: url(${ movie.poster.replace('http:', '') })`"
                 ></div>
                 <div class="movie-card__actions">
                     
