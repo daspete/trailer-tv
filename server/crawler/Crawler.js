@@ -12,7 +12,7 @@ class Crawler {
         this.sockets = data.sockets;
 
         this.maxPages = 452;
-        this.page = 300;
+        this.page = 0;
 
         this.StartCrawler();
     }
